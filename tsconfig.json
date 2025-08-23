@@ -21,10 +21,16 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "types": ["node"],
+    "types": ["node", "jest"],
     "paths": {
       "@config": ["config/configuration"],
       "@database/*": ["config/database/*"]
     }
-  }
+  },
+  "include": ["src/**/*.ts", "src/**/*.js"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "src/config/database/config.js"
+  ]
 }

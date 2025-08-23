@@ -7,7 +7,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "migrate:create": "ts-node generate-migration.ts",
+    "migrate:up": "pnpm run build && npx sequelize-cli db:migrate",
+    "migrate:down": "pnpm run build && npx sequelize-cli db:migrate:undo",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -47,6 +49,7 @@
     "globals": "^16.0.0",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",
+    "sequelize-cli": "^6.6.3",
     "source-map-support": "^0.5.21",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.5",
