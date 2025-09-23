@@ -16,17 +16,26 @@ export async function up(queryInterface: QueryInterface) {
       allowNull: false,
       unique: true,
     },
+    cpf: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    createdAt: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    updatedAt: {
+    updated_at: {
       type: DataTypes.DATE,
       allowNull: false,
+    },
+    deleted_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
   });
 }
